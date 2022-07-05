@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h3>Online Education</h3>
+        </div>
+        <ul id="ul">
+            <li>Home</li>
+            <li>About</li>
+            <li>Features</li>
+            <li>Contact Us</li>
+        </ul>
+        <label for="chbox" id="label" onclick="isChecked();"><span class="material-symbols-outlined">
+            menu
+            </span></label>
+        <input type="checkbox" id="chbox">
+    </nav>
+    <header>
+        <div class="img"></div>
+        <div class="form">
+            <h1>Education <br> <b>Online</b></h1>
+            <input type="email" placeholder="Enter a valid email address">
+            <button type="submit" onclick="submit();">Submit</button>
+        </div>
+    </header>
+    <script>
+        function submit() {
+            document.querySelector("input[type=email]").value = "";
+        }
+        function isChecked(){
+            if(document.getElementById("chbox").checked){
+                document.getElementById("ul").classList.add("checked");
+                document.getElementById("label").innerHTML = `<span class="material-symbols-outlined">
+            close
+            </span>`;
+        }
+        else{
+                document.getElementById("label").innerHTML = `<span class="material-symbols-outlined">
+            menu
+            </span>`;
+                document.getElementById("ul").classList.remove("checked");
+            }
+        }
+    </script>
+</body>
+</html>
